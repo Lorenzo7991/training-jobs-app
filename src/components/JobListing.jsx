@@ -1,13 +1,15 @@
 import React from 'react'
 import { useState } from 'react';
 import {FaMapMarker} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const JobListing = ({ id, type, title, description, salary, location }) => {
     const [showFullDescription, setShowFullDescription] = useState(false);
 
-    let descriptionText = description;
+    console.log({ id, type, title, description, salary, location });
+    let descriptionText = description || '';
 
-    if (!showFullDescription) {
+    if (!showFullDescription && description) {
         descriptionText = description.substring(0, 100) + '...';
     }
     return (
@@ -31,9 +33,9 @@ const JobListing = ({ id, type, title, description, salary, location }) => {
                             <FaMapMarker className="inline-block text-lg mb-2 mr-2" />
                             {location}
                         </div>
-                        <a href={`job/${id}`} className="h-[36px] bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-lg text-center text-sm">
+                        <Link to={`job/${id}`} className="h-[36px] bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-lg text-center text-sm">
                             Read More
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@ import React from 'react';
 
 const Hero = ({
     title = "Your New Job Awaits You!",
-    subtitle = "What are you waiting? Find your new life now."
+    subtitle = "What are you waiting? Find your React dev position!"
 }) => {
     return (
         <>

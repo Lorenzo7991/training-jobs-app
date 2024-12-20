@@ -33,7 +33,7 @@ const JobListing = ({ id, type, title, description, salary, location }) => {
                             <FaMapMarker className="inline-block text-lg mb-2 mr-2" />
                             {location}
                         </div>
-                        <Link to={`job/${id}`} className="h-[36px] bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-lg text-center text-sm">
+                        <Link to={`jobs/${id}`} className="h-[36px] bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-lg text-center text-sm">
                             Read More
                         </Link>
                     </div>

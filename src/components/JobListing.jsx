@@ -7,8 +7,8 @@ const JobListing = ({ id, type, title, description, salary, location }) => {
     let descriptionText = description;
 
     if (!showFullDescription) {
-        descriptionText = description.substring(0, 100) + "...";
-    }   
+        descriptionText = description.substring(0, 100) + '...';
+    }
     return (
         <>
             <div key={id} className="bg-white rounded-xl shadow-md relative">
@@ -19,6 +19,9 @@ const JobListing = ({ id, type, title, description, salary, location }) => {
                     </div>
                     <div className="mb-5">
                         {descriptionText}
+                        <button onClick={() => setShowFullDescription(!showFullDescription)} className={`text-sky-500 hover:underline ${showFullDescription ? "ml-5" : ""}`}>
+                            {showFullDescription ? "[...]Less" : "More"}
+                        </button>
                     </div>
                     <h3 className="text-sky-500 mb-2">{salary}</h3>
                     <div className="border border-gray-100 mb-5"></div>
